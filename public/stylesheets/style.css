@@ -1,0 +1,85 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.head {
+    height: 15vh;
+}
+
+.main1 {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: auto;
+}
+
+img {
+    width: 100%;
+}
+
+.output1, .output2, .output3 {
+    text-align: center;
+    position: absolute;
+    background: white;
+    top: 75%;
+    width: 26%;
+    font-size: 3vw;
+}
+.output1 {
+    left: 10%;
+}
+.output2 {
+    left: 50%;
+    
+    background-color: white;
+    transform: translateX(-50%);
+}
+.output3 {
+    right: 10%;
+}
+
+.main2 {
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding-top: 10px;
+}
+select {
+    background-color: #F9A03F;
+}
+input, select {
+    min-height: 40px;
+    text-align: center;
+    margin: 0.3%;
+    width: 19%;
+    font-size: 1.7vw;
+}
+
+
+.main3 {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.btnHidden {
+    margin: 0.3%;
+    min-height: 40px;
+    width: 27%;
+    font-size: 2vw;
+    padding: 0;
+}
+.btnBuy, .btnSell {
+    margin: 0.3%;
+    min-height: 40px;
+    width: 19%;
+    font-size: 2vw;
+    padding: 0;
+}
+
+@media screen and (max-width: 800px) {}
