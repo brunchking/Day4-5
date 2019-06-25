@@ -59,6 +59,15 @@ input, select {
     font-size: 1.7vw;
 }
 
+.main4 {
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+.hidden {
+    visibility: hidden;
+}
 
 .main3 {
     width: 100%;
@@ -81,5 +90,3 @@ input, select {
     font-size: 2vw;
     padding: 0;
 }
-
-@media screen and (max-width: 800px) {}

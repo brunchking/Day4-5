@@ -2,6 +2,7 @@ const output1 = document.querySelector('.output1');
 const output2 = document.querySelector('.output2');
 const output3 = document.querySelector('.output3');
 const select = document.querySelector('select');
+const coinRate = document.querySelector('.coinRate');
 const input = document.querySelector('.input');
 const output = document.querySelector('.output');
 const btnHidden = document.querySelector('.btnHidden');
@@ -11,31 +12,53 @@ const XHR = new XMLHttpRequest();
 let bitcoin, litecoin, dogecoin;
 let totalCoin = 0;
 
-btnHidden.innerHTML = localStorage.currentCoin;
 
+btnHidden.innerHTML = localStorage.currentCoin;
 btnBuy.addEventListener('click', () => {
     let coins, coinName;
-    coins = input.value / output1.innerHTML;
-    coins = coins.toFixed(5);
-    totalCoin = coins;
-    if (select.value === 'Bitcoin') {
-        localStorage.currentCoin = 'BTC: ' + totalCoin.toString();
-        coinName = "BTC: ";
+
+    if (coinRate.value === "") {
+        coins = input.value / output1.innerHTML;
+        coins = coins.toFixed(5);
+        totalCoin = coins;
+        if (select.value === 'Bitcoin') {
+            localStorage.currentCoin = 'BTC: ' + totalCoin.toString();
+            coinName = "BTC: ";
+        }
+        else if (select.value === 'Litecoin') {
+            localStorage.currentCoin = 'LTC: ' + totalCoin.toString();
+            coinName = "LTC: ";
+        }
+        else if (select.value === 'Dogecoin') {
+            localStorage.currentCoin = 'DOGE: ' + totalCoin.toString();
+            coinName = "DOGE: ";
+        }
+        output2.innerHTML = coins;
+        btnHidden.innerHTML = coinName + totalCoin.toString();
     }
-    else if (select.value === 'Litecoin') {
-        localStorage.currentCoin = 'LTC: ' + totalCoin.toString();
-        coinName = "LTC: ";
+    else {
+        coins = input.value / coinRate.value;
+        coins = coins.toFixed(5);
+        totalCoin = coins;
+        if (select.value === 'Bitcoin') {
+            localStorage.currentCoin = 'BTC: ' + totalCoin.toString();
+            coinName = "BTC: ";
+        }
+        else if (select.value === 'Litecoin') {
+            localStorage.currentCoin = 'LTC: ' + totalCoin.toString();
+            coinName = "LTC: ";
+        }
+        else if (select.value === 'Dogecoin') {
+            localStorage.currentCoin = 'DOGE: ' + totalCoin.toString();
+            coinName = "DOGE: ";
+        }
+        output2.innerHTML = coins;
+        btnHidden.innerHTML = co
     }
-    else if (select.value === 'Dogecoin') {
-        localStorage.currentCoin = 'DOGE: ' + totalCoin.toString();
-        coinName = "DOGE: ";
-    }
-    output2.innerHTML = coins;
-    btnHidden.innerHTML = coinName + totalCoin.toString();
 });
 btnSell.addEventListener('click', () => {
     let coins;
-    coins = totalCoin * output1.innerHTML;
+    coins = output.value * output1.innerHTML;
     coins = Math.ceil(coins);
     output3.innerHTML = coins;
 });
